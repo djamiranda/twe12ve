@@ -101,16 +101,16 @@ function Detail() {
           <p>{currentProduct.description}</p>
           <p>
             <strong>Price:</strong>${currentProduct.price}{' '}
-            <button onClick={addToCart}>Add to Cart</button>
+            <button onClick={addToCart}>🔥 GET 'EM</button>
             <button
               disabled={!cart.find((p) => p._id === currentProduct._id)}
               onClick={removeFromCart}
             >
-              Remove from Cart
+              🧱TRASH
             </button>
           </p>
           <div className="header-getem">
-            <h1 className="title-getem">GOT</h1>
+            <h1 className="title-getem">GET</h1>
             <h1 className="title-getem second"><i>'</i>EM</h1>
           </div>
           <img
