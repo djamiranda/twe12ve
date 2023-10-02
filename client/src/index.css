@@ -9,10 +9,18 @@
   --error: rgb(228, 46, 1);
   --spacing-one: calc(1rem * 0.5);
   --spacing-two: calc(1rem);
+  --font-family: "FuturaExtraBoldCondensed";
+  --font-family-header: "FuturaExtraBoldCondensed";
 }
 
 * {
   box-sizing: border-box;
+}
+
+/* Import fonts */
+@font-face {
+  font-family: FuturaExtraBoldCondensed;
+  src: url("https://cdn.glitch.com/711eafe7-e0de-40bd-ba9c-cfab210f5b28%2FFuturaExtraBoldCondensed.otf?v=1631480624986") format("opentype");
 }
 
 html,
@@ -25,7 +33,7 @@ body {
   padding: 0;
   font-family: "Karla", sans-serif;
   font-weight: 400;
-  line-height: 1.5;
+  /* line-height: 1.5; */
   font-size: 16px;
   color: var(--dark);
 }
@@ -74,11 +82,15 @@ p {
 a {
   color: var(--tertiary);
   text-decoration: none;
-  font-weight: bold;
+  font-family: FuturaExtraBoldCondensed;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 36px;
 }
 
 a:hover {
-  text-decoration: underline;
+  
+  /* text-decoration: underline; */
 }
 
 header {
@@ -87,6 +99,38 @@ header {
 
 header a {
   color: var(--light);
+}
+
+.header-getem {
+  padding-top: 5%;
+}
+
+.header-getem h1 {
+  line-height: 80px;
+  letter-spacing: -5px
+}
+
+.header-getem .second i{
+  padding-right: 14px;
+}
+
+.image-container {
+  overflow: hidden;
+  width: 100%; 
+  height: 50vh; 
+  transition: width 0.3s, height 0.3s;
+  position: relative;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.image-container.hovered {
+  width: 100%;
+  height: 100%;
 }
 
 button {
@@ -149,9 +193,34 @@ input:focus {
 .flex-row {
   display: flex;
   flex-wrap: wrap;
-   justify-content: center;
+  justify-content: space-around;
   align-items: center;
 }
+
+ul.flex-row {
+  list-style: none;
+  padding-left: 0;
+}
+
+ul.flex-row li::before {
+  content: "🏀";
+  width: 1em;
+  margin-right: 0.5em;
+  animation: MoveUpDown 1s linear infinite;
+  position: relative;
+  left: 0;
+  bottom: 0;
+}
+
+@keyframes MoveUpDown {
+  0%, 100% {
+    bottom: 0;
+  }
+  50% {
+    bottom: 20px;
+  }
+}
+
 
 .space-between {
   justify-content: space-between;
@@ -164,6 +233,19 @@ input:focus {
 .mx-1 {
   margin-right: var(--spacing-two);
   margin-left: var(--spacing-one);
+}
+
+.mx-1:hover {
+  /* font-size: 1rem; */
+  /* text-decoration: none; */
+  /* padding: 0rem .0rem; */
+  border-radius: 1rem;
+  /* border: none; */
+  /* outline: none; */
+  cursor: pointer;
+  /* margin: 1px 1px; */
+  background-color: var(--dark);
+  /* color: var(--light); */
 }
 
 .mx-2 {
@@ -182,8 +264,8 @@ input:focus {
 }
 
 .px-1 {
-  padding-right: var(--spacing-one);
-  padding-left: var(--spacing-one);
+  padding-right: var(--spacing-two);
+  padding-left: var(--spacing-two);
 }
 
 .px-2 {
@@ -206,6 +288,10 @@ input:focus {
   text-align: center;
 }
 
+.card:hover {
+  transform: scale(1.1);
+}
+
 .error-text {
   color: var(--error);
 }
@@ -226,6 +312,15 @@ input:focus {
   cursor: pointer;
 }
 
+.title-getem {
+  /*   color: #2800FF; */
+    font-family: FuturaExtraBoldCondensed;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 100px;
+    line-height: 105%;
+    margin: 0;
+  }
 
 @media screen and (max-width: 768px) {
   .card {

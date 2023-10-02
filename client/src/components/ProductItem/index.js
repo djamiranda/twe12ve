@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 
 // import utils dependencies
 import { ADD_TO_CART, UPDATE_CART_QUANTITY } from "../../utils/actions";
-import { pluralize } from "../../utils/helpers";
+// import { pluralize } from "../../utils/helpers";
 import { idbPromise } from "../../utils/helpers";
 
 function ProductItem(item) {
@@ -44,11 +44,12 @@ function ProductItem(item) {
       </Link>
       <div>
         <div>
-          {quantity} {pluralize("Pair", quantity)} In Stock!
+          ${quantity} on StockX! 🤢
         </div>
-        <span>${price}</span>
+        <div>${price} Member Price 🔌</div>
+        <div>${quantity-price} Savings! 🥳</div>
       </div>
-      <button onClick={addToCart}>Add To Cart</button>
+      <button onClick={addToCart}>GET 'EM</button>
     </div>
   );
 }

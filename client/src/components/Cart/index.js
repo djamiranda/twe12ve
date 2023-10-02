@@ -77,7 +77,7 @@ const Cart = () => {
           <span className="cart-count">{calculateCartCount()}</span>
         )}{" "} 
         <span role="img" aria-label="trash">
-          🛒
+        <img width="48" height="48" src="https://img.icons8.com/external-nawicon-outline-color-nawicon/64/external-Basketball-Hoop-basketball-nawicon-outline-color-nawicon.png" alt="external-Basketball-Hoop-basketball-nawicon-outline-color-nawicon"/>
         </span>
       </div>
     );
@@ -99,19 +99,17 @@ const Cart = () => {
             <strong>Total: ${calculateTotal()}</strong>
 
             {Auth.loggedIn() ? (
-              <button onClick={submitCheckout}>Checkout</button>
+              <button onClick={submitCheckout}>Cash Out</button>
             ) : (
-              // <span>(log in to check out)</span>
-              <Link to="/login">Login To Checkout</Link>
+              
+              <Link to="/login">JOIN NOW / SIGN IN</Link>
             )}
           </div>
         </div>
       ) : (
         <h3>
           <span role="img" aria-label="shocked">
-          🤖
-          </span>
-          You haven't added anything to your cart yet!
+          🤖 Shoot Your Shot! 🤖</span>
         </h3>
       )}
     </div>

@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 import { LOGIN } from "../utils/mutations";
 import Auth from "../utils/auth";
 
+import Jumbotron from '../components/Jumbotron';
+
 function Login(props) {
   const [formState, setFormState] = useState({ email: "", password: "" });
   const [login, { error }] = useMutation(LOGIN);
@@ -31,12 +33,12 @@ function Login(props) {
 
   return (
     <div className="container my-1">
-      <Link to="/signup">⏮️ Back To Signup</Link>
+      <Link to="/signup">⏮️ JOIN NOW</Link>
 
-      <h2>Login</h2>
+      <h2>SIGN IN</h2>
       <form onSubmit={handleFormSubmit}>
         <div className="flex-row space-between my-2">
-          <label htmlFor="email">📧  Email address:</label>
+          <label htmlFor="email">📧  Email:</label>
           <input
             placeholder="michael@jordan.com"
             name="email"

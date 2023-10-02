@@ -3,6 +3,7 @@ import { useMutation } from "@apollo/client";
 import Jumbotron from "../components/Jumbotron";
 import { ADD_ORDER } from "../utils/mutations";
 import { idbPromise } from "../utils/helpers";
+import { QUERY_USER } from "../utils/queries";
 
 function Success() {
   const [addOrder] = useMutation(ADD_ORDER);
@@ -32,8 +33,10 @@ function Success() {
   return (
     <div>
       <Jumbotron>
-        <h1>GOT EM!</h1>
-        
+      <div className="header-getem">
+            <h1 className="title-getem">GOT</h1>
+            <h1 className="title-getem second"><i>'</i>EM</h1>
+          </div>
       </Jumbotron>
     </div>
   );

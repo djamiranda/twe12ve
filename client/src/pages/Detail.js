@@ -21,6 +21,8 @@ import Cart from '../components/Cart';
 
 // import assset
 import spinner from '../assets/spinner.gif';
+import Jumbotron from '../components/Jumbotron';
+import PopupWindow from '../components/PopupWindow';
 
 function Detail() {
   const dispatch = useDispatch();
@@ -93,7 +95,8 @@ function Detail() {
     <>
       {currentProduct && cart ? (
         <div className="container my-1">
-          <Link to="/">⏪ Back to Products</Link>
+          <Link to="/">⏪ HOME</Link>
+          <Jumbotron>
           <h2>{currentProduct.name}</h2>
           <p>{currentProduct.description}</p>
           <p>
@@ -106,11 +109,17 @@ function Detail() {
               Remove from Cart
             </button>
           </p>
+          <div className="header-getem">
+            <h1 className="title-getem">GOT</h1>
+            <h1 className="title-getem second"><i>'</i>EM</h1>
+          </div>
           <img
             src={`/images/${currentProduct.image}`}
             alt={currentProduct.name}
-            width="800" 
+            width="300" 
           />
+          </Jumbotron>
+          <PopupWindow currentProduct={currentProduct} />
         </div>
       ) : null}
       {loading ? <img src={spinner} alt="loading" /> : null}

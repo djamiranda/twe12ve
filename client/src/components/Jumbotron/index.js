@@ -6,7 +6,7 @@ function Jumbotron({ children }) {
       style={{
         height: 560,
         clear: "both",
-        paddingTop: 120,
+        paddingTop: 50,
         textAlign: "center",
       }}
     >

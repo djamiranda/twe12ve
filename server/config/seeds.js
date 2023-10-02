@@ -31,7 +31,7 @@ db.once("open", async () => {
       image: "Jordan_1.jpg",
       category: categories[0]._id,
       price: 180.00,
-      quantity: 2,
+      quantity: 1500.00,
     },
     {
       name: "Jordan 2",
